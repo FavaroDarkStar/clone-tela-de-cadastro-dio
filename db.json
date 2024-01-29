@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "a074",
+      "name": "ada@asda",
+      "email": "ada@asda",
+      "password": "ada@asda"
+    },
+    {
+      "id": "606d",
+      "name": "ada@asda",
+      "email": "ada@asdaj",
+      "password": "ada@asda"
+    },
+    {
+      "id": "3daf",
+      "name": "aa@aa",
+      "email": "aa@aa",
+      "password": "aa@aa"
+    },
+    {
+      "id": "1ce8",
+      "name": "bbbbbbbbb",
+      "email": "bb@bb",
+      "password": "bb@bb"
+    }
+  ]
+}
