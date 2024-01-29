@@ -35,7 +35,6 @@ const SignUp = () => {
     const onSubmit = async formData => {
         try{
             const getUserEmail = await api.get(`users?email=${formData.email}`);
-            console.log(getUserEmail.data.length);
             if(getUserEmail.data.length > 0) throw new Error("Email já cadastrado");
             const { data } = await api.post('users', {
                 "name": formData.name,
