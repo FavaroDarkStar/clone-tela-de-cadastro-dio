@@ -15,8 +15,9 @@ import {
 
 import {Button} from '../Button'
 import { useNavigate } from "react-router-dom";
+import { IHeader } from "./types";
 
-const Header = ({autenticado}) => {
+const Header = ({autenticado}: IHeader) => {
     const navigate = useNavigate();
     const handleClickSignIn = () => {
         navigate('/login')
@@ -44,7 +45,7 @@ const Header = ({autenticado}) => {
                         <UserPicture src="https://avatars.githubusercontent.com/u/106363360?v=4"/>
                     </>):
                     (<>
-                        <MenuRight href="/" variant="menuright">Home</MenuRight>
+                        <MenuRight href="/" >Home</MenuRight>
                         <Button tittle="Entrar" onClick={handleClickSignIn} />
                         <Button tittle="Cadastrar" onClick={handleClickSignUp}/>
                     </>)}

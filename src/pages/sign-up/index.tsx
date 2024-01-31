@@ -11,6 +11,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup"
 import { api } from "../../services/api"
 import { Column } from '../login/styles'
+import { IFormData } from './types'
 
 const schema = yup.object({
     name: yup.string().min(2,'No minimo 2 caracteres').required('Campo obrigatório'),
@@ -22,7 +23,7 @@ const schema = yup.object({
 const SignUp = () => {
     const navigate = useNavigate();
 
-    const { control, handleSubmit, formState: { errors }} = useForm({
+    const { control, handleSubmit, formState: { errors }} = useForm<IFormData>({
         resolver: yupResolver(schema),
         mode: 'onChange',//quando é feita a validação
         defaultValues: {
@@ -32,7 +33,7 @@ const SignUp = () => {
           },
     });
 
-    const onSubmit = async formData => {
+    const onSubmit = async (formData: IFormData) => {
         try{
             const getUserEmail = await api.get(`users?email=${formData.email}`);
             if(getUserEmail.data.length > 0) throw new Error("Email já cadastrado");
